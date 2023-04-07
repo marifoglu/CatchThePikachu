@@ -18,7 +18,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
 
     var score = 0
-    var imageArray = ArrayList<ImageView>()
+    var pikachuArray = ArrayList<ImageView>()
+    var psyduckArray = ArrayList<ImageView>()
     var handler = Handler(Looper.getMainLooper())
     var runnable = Runnable { }
 
@@ -28,7 +29,8 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        imageArray = arrayListOf<ImageView>(
+
+        pikachuArray = arrayListOf<ImageView>(
             binding.imageView1,
             binding.imageView2,
             binding.imageView3,
@@ -40,35 +42,43 @@ class MainActivity : AppCompatActivity() {
             binding.imageView9
         )
 
-        val randomIndex = Random().nextInt(imageArray.size)
-
-//        val imageView = findViewById<ImageView>(R.id.imageView)
-//        imageView.setImageResource(imageIds[randomIndex])
+        psyduckArray = arrayListOf<ImageView>(
+            binding.psyduckImageView1,
+            binding.psyduckImageView2,
+            binding.psyduckImageView3,
+            binding.psyduckImageView4,
+            binding.psyduckImageView5,
+            binding.psyduckImageView6,
+            binding.psyduckImageView7,
+            binding.psyduckImageView8,
+            binding.psyduckImageView9
+        )
 
 
 
         hideImages()
 
-
         // Countdown timer
-        object : CountDownTimer(15000,500){
+        object : CountDownTimer(15000, 500) {
 
             override fun onTick(millisUntilFinished: Long) {
-                binding.textTime.text = "Time : ${millisUntilFinished/1000}"
+                binding.textTime.text = "Time : ${millisUntilFinished / 1000}"
             }
 
             override fun onFinish() {
 
                 binding.textTime.text = "Time : 0"
                 handler.removeCallbacks(runnable)
-                for (image in imageArray){
-                   // image.visibility = View.INVISIBLE
+                for (image in pikachuArray) {
+                    image.visibility = View.INVISIBLE
                 }
 
                 val builder = AlertDialog.Builder(this@MainActivity)
                 builder.setTitle("Game over!")
-                builder.setMessage("Your Score is : $score . " +
-                        "\nDo you want to play again?")
+                builder.setMessage(
+                    "Your Score is : $score . " +
+                            "\nDo you want to play again?"
+                )
                 builder.setPositiveButton("Yes") { dialog, which ->
                     // Restart
                     val intent = intent
@@ -77,7 +87,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 // show score buttons maybe
                 builder.setNegativeButton("No") { dialog, which ->
-                    Toast.makeText(applicationContext, "Thanks for the game!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        applicationContext,
+                        "Thanks for the game!",
+                        Toast.LENGTH_LONG
+                    ).show()
                     // Close Game
                 }
                 builder.show()
@@ -87,31 +101,44 @@ class MainActivity : AppCompatActivity() {
         }.start()
     }
 
-    fun increaseScore(view: View){
+    fun increaseScore(view: View) {
         score++
         binding.textScore.text = "Score : $score"
     }
 
-    fun decreaseScore(view: View){
+    fun decreaseScore(view: View) {
         score--
         binding.textScore.text = "Score : $score"
     }
 
     private fun hideImages() {
+        var lastPikachuIndex = -1 // lets find! the last shown Pikachu image
+        val random = Random()
 
         runnable = Runnable {
-            for (image in imageArray) {
-                image.visibility = View.INVISIBLE
+            for (pikachu in pikachuArray) {
+                pikachu.visibility = View.INVISIBLE
             }
 
-            val random = Random()
-            val randomIndex = random.nextInt(9)
-            imageArray[randomIndex].visibility = View.VISIBLE
+            for (psyduck in psyduckArray){
+                psyduck.visibility = View.INVISIBLE
+            }
 
-            handler.postDelayed(runnable,500)
+            if (random.nextInt(4) != 0) {
+                // Generate a random index
+                var randomIndex = random.nextInt(pikachuArray.size - 1)
+                if (randomIndex >= lastPikachuIndex) randomIndex++ // avoiding showing the same Pikachu
+                lastPikachuIndex = randomIndex
+                pikachuArray[randomIndex].visibility = View.VISIBLE
+            } else {
+                // Psyduck array ...
+                val randomIndex = random.nextInt(psyduckArray.size)
+                psyduckArray[randomIndex].visibility = View.VISIBLE
+            }
+
+            handler.postDelayed(runnable, 500)
         }
 
         handler.post(runnable)
-
     }
 }
