@@ -26,7 +26,7 @@
         android:id="@+id/textScore"
         android:layout_width="122dp"
         android:layout_height="46dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="Score : 0"
         android:textSize="20sp"

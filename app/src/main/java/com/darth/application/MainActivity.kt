@@ -1,12 +1,16 @@
 package com.darth.application
 
 import android.app.AlertDialog
+import android.media.MediaPlayer
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import android.view.WindowInsets
+import android.view.WindowInsetsController
 import android.widget.ImageView
 import android.widget.Toast
 import com.darth.application.databinding.ActivityMainBinding
@@ -28,6 +32,23 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        supportActionBar?.hide()
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            val controller = window.insetsController
+            if (controller != null) {
+                controller.hide(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
+                controller.systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            }
+        } else {
+            @Suppress("DEPRECATION")
+            window.decorView.systemUiVisibility = (
+                    View.SYSTEM_UI_FLAG_FULLSCREEN
+                            or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    )
+        }
 
 
         pikachuArray = arrayListOf<ImageView>(
@@ -104,11 +125,25 @@ class MainActivity : AppCompatActivity() {
     fun increaseScore(view: View) {
         score++
         binding.textScore.text = "Score : $score"
+
+        val pikachuSound = MediaPlayer.create(this, R.raw.pikachusound)
+        pikachuSound.start()
+        pikachuSound.setOnCompletionListener {
+            // Release the sound
+            pikachuSound.release()
+        }
     }
 
     fun decreaseScore(view: View) {
         score--
         binding.textScore.text = "Score : $score"
+
+        val psyduckSound = MediaPlayer.create(this, R.raw.psyducksound)
+        psyduckSound.start()
+        psyduckSound.setOnCompletionListener {
+            // Release the sound
+            psyduckSound.release()
+        }
     }
 
     private fun hideImages() {
