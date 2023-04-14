@@ -36,179 +36,263 @@
         app:layout_constraintTop_toBottomOf="@+id/textTime" />
 
     <GridLayout
-    android:id="@+id/gridLayout"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="30dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textScore">
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textScore">
 
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_row="0"
-        android:layout_column="0"
-        android:src="@drawable/pika1"
-        android:onClick="increaseScore"/>
+        <ImageView
+            android:id="@+id/bushes1"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:src="@drawable/bushes"
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_row="0"
-        android:layout_column="1"
-        android:src="@drawable/pika2"
-        android:onClick="increaseScore"/>
+        <ImageView
+            android:id="@+id/bushes2"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:src="@drawable/bushes"
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/bushes3"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:src="@drawable/bushes"
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/bushes4"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:src="@drawable/bushes"
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/bushes5"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:src="@drawable/bushes"
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/bushes6"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:src="@drawable/bushes"
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/bushes7"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:src="@drawable/bushes"
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/bushes8"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:src="@drawable/bushes"
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/bushes9"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:src="@drawable/bushes"
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_row="0"
-        android:layout_column="2"
-        android:src="@drawable/pika3"
-        android:onClick="increaseScore"/>
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_row="1"
-        android:layout_column="0"
-        android:src="@drawable/pika4"
-        android:onClick="increaseScore"/>
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_row="1"
-        android:layout_column="1"
-        android:src="@drawable/pika5"
-        android:onClick="increaseScore"/>
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_row="1"
-        android:layout_column="2"
-        android:src="@drawable/pika6"
-        android:onClick="increaseScore"/>
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_row="2"
-        android:layout_column="0"
-        android:src="@drawable/pika1"
-        android:onClick="increaseScore"/>
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_row="2"
-        android:layout_column="1"
-        android:src="@drawable/pika2"
-        android:onClick="increaseScore"/>
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_row="2"
-        android:layout_column="2"
-        android:src="@drawable/pika3"
-        android:onClick="increaseScore"/>
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:src="@drawable/pika1"
+            android:onClick="increaseScore"
+            android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:src="@drawable/pika2"
+            android:onClick="increaseScore"
+            android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:src="@drawable/pika3"
+            android:onClick="increaseScore"
+            android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:src="@drawable/pika4"
+            android:onClick="increaseScore"
+            android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:src="@drawable/pika5"
+            android:onClick="increaseScore"
+            android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:src="@drawable/pika6"
+            android:onClick="increaseScore"
+            android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:src="@drawable/pika1"
+            android:onClick="increaseScore"
+            android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:src="@drawable/pika2"
+            android:onClick="increaseScore"
+            android:layout_gravity="center" />
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:src="@drawable/pika3"
+            android:onClick="increaseScore"
+            android:layout_gravity="center" />
 
 
         <ImageView
             android:id="@+id/psyduckImageView1"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_row="0"
             android:layout_column="0"
             android:src="@drawable/psyduck"
-            android:onClick="decreaseScore"/>
-
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
         <ImageView
             android:id="@+id/psyduckImageView2"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_row="0"
             android:layout_column="1"
             android:src="@drawable/psyduck"
-            android:onClick="decreaseScore"/>
-
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
         <ImageView
             android:id="@+id/psyduckImageView3"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_row="0"
             android:layout_column="2"
             android:src="@drawable/psyduck"
-            android:onClick="decreaseScore"/>
-
-
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
         <ImageView
             android:id="@+id/psyduckImageView4"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_row="1"
             android:layout_column="0"
             android:src="@drawable/psyduck"
-            android:onClick="decreaseScore"/>
-
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
         <ImageView
             android:id="@+id/psyduckImageView5"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_row="1"
             android:layout_column="1"
             android:src="@drawable/psyduck"
-            android:onClick="decreaseScore"/>
-
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
         <ImageView
             android:id="@+id/psyduckImageView6"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_row="1"
             android:layout_column="2"
             android:src="@drawable/psyduck"
-            android:onClick="decreaseScore"/>
-
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
         <ImageView
             android:id="@+id/psyduckImageView7"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_row="2"
             android:layout_column="0"
             android:src="@drawable/psyduck"
-            android:onClick="decreaseScore"/>
-
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
         <ImageView
             android:id="@+id/psyduckImageView8"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_row="2"
             android:layout_column="1"
             android:src="@drawable/psyduck"
-            android:onClick="decreaseScore"/>
-
-
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
         <ImageView
             android:id="@+id/psyduckImageView9"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_row="2"
             android:layout_column="2"
             android:src="@drawable/psyduck"
-            android:onClick="decreaseScore"/>
-    </GridLayout>
+            android:onClick="decreaseScore"
+            android:layout_gravity="center" />
 
+    </GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
