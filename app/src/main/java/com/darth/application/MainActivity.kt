@@ -123,28 +123,34 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun increaseScore(view: View) {
-        score++
-        binding.textScore.text = "Score : $score"
+        if (pikachuArray.contains(view)) {
+            score++
+            binding.textScore.text = "Score: $score"
 
-        val pikachuSound = MediaPlayer.create(this, R.raw.pikachusound)
-        pikachuSound.start()
-        pikachuSound.setOnCompletionListener {
-            // Release the sound
-            pikachuSound.release()
+            val pikachuSound = MediaPlayer.create(this, R.raw.pikachusound)
+            pikachuSound.start()
+            pikachuSound.setOnCompletionListener {
+                // Release the sound
+                pikachuSound.release()
+            }
         }
     }
 
     fun decreaseScore(view: View) {
-        score--
-        binding.textScore.text = "Score : $score"
+        if (psyduckArray.contains(view)) {
+            score--
+            binding.textScore.text = "Score: $score"
 
-        val psyduckSound = MediaPlayer.create(this, R.raw.psyducksound)
-        psyduckSound.start()
-        psyduckSound.setOnCompletionListener {
-            // Release the sound
-            psyduckSound.release()
+            val psyduckSound = MediaPlayer.create(this, R.raw.psyducksound)
+            psyduckSound.start()
+            psyduckSound.setOnCompletionListener {
+                // Release the sound
+                psyduckSound.release()
+            }
         }
     }
+
+
 
     private fun hideImages() {
         var lastPikachuIndex = -1 // lets find! the last shown Pikachu image
