@@ -25,8 +25,6 @@
 </ul>
 
 <h2>Screenshots</h2>
-
-<h2>Screenshots</h2>
 <table>
   <tr>
     <td>
